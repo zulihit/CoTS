@@ -17,7 +17,7 @@
 <p align="center">
 <b>CVPR 2025</b>  
 <br><br>
-<img src="assets/cots.png" width="600">
+<img src="assets/cots.png" width="400">
 </p>
 
 ---
