@@ -84,7 +84,7 @@ python detection_pipeline/test_install.py
 
 ## 🧩 Environment Details
 
-The multi-agent transport environment used in this project was originally introduced by [CoELA](https://umass-embodied-agi.github.io/CoELA/tdw_mat/), which extended the [ThreeDWorld Transport Challenge](https://arxiv.org/abs/2103.14025) into a collaborative setting. This environment features multiple embodied agents with ego-centric visual input, object manipulation capabilities, and natural language communication.
+The multi-agent transport environment used in this project was originally introduced by [CoELA](https://github.com/UMass-Embodied-AGI/CoELA/tree/master/tdw_mat), which extended the [ThreeDWorld Transport Challenge](https://arxiv.org/abs/2103.14025) into a collaborative setting. This environment features multiple embodied agents with ego-centric visual input, object manipulation capabilities, and natural language communication.
 
 Our method, **CoTS**, builds directly upon this multi-agent framework, retaining its key environment design and task settings while improving agent coordination and planning via tree-structured reasoning and reflective scoring.
 
