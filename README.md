@@ -13,7 +13,7 @@
 
 <p align="center">
 
-<img src="assets/cots.png" width="450">
+<img src="assets/cots.png" width="600">
 </p>
 
 ---
@@ -38,7 +38,7 @@ CoTS builds upon the architecture of [CoELA](https://umass-embodied-agi.github.i
 - ✅ **Act**: Once a coherent plan is validated, agents execute actions in coordination. A plan evaluation module ensures consistency and adapts if plans become unsuitable.
 
 <p align="center">
-  <img src="assets/framework.png" width="600" alt="CoTS Framework Overview">
+  <img src="assets/framework.png" width="700" alt="CoTS Framework Overview">
 </p>
 
 ---
