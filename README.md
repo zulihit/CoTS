@@ -1,6 +1,5 @@
 <div align="center">
-  <h1> CoTS: Collaborative Tree Search for Embodied Multi-Agent Systems</h1>
-  <h3> CVPR 2025 • Multi-Agent Collaboration Meets Language Models</h3>
+  <h1> 🤖CVPR 2025 • Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration🤖 </h1>
 </div>
 
 
