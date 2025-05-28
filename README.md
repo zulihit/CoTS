@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 🤖CVPR 2025 • Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration🤖 </h1>
+  <h1> CVPR 2025 • Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration </h1>
 </div>
 
 
