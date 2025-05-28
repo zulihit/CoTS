@@ -20,7 +20,7 @@
 
 This repository contains the official implementation of our CVPR 2025 paper:
 
-**🤖Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration 🤖**  
+**🤖Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration🤖**  
 _Lizheng Zu, Lin Lin, Song Fu, Na Zhao, Pan Zhou_  
 
 > CoTS (Cooperative Tree Search) is a collaborative framework for embodied agents based on large language models, which enhances multi-agent planning and execution by guiding strategic discussions within a modified Monte Carlo Tree Search and evaluating plans to ensure coherent, efficient teamwork in complex tasks.
