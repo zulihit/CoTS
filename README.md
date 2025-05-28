@@ -13,7 +13,7 @@
 
 <p align="center">
 
-<img src="assets/cots.png" width="600">
+<img src="assets/cots.png" width="550">
 </p>
 
 ---
