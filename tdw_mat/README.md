@@ -1,4 +1,4 @@
-# TDW Multi-Agent Transport with CoTS
+# TDW Multi-Agent Transport
 
 
 ## 📂 Codebase Layout
@@ -104,9 +104,9 @@ Settings:
 - **Enough Container**: 1 container per 2 objects, in at most two rooms.
 - **Rare Container**: 1 container per 5 objects, in a single room.
 
-Example layout:
+One example of scenes, target objects, and containers is shown in the following image:
 
-![task_description_tdw](../assets/tdw_env.png)
+![task_description_tdw](../assets/tdwmat.png)
 
 ---
 
@@ -133,55 +133,4 @@ Scenes are built from modular floor plans with varied textures and furniture lay
 - Diverse layouts and material textures (e.g. tile, carpet, wood)
 
 ---
-
-### 👁️ Gym Observations
-
-```python
-"rgb": Box(0, 512, (3, 512, 512))
-"depth": Box(0, 512, (512, 512))
-"seg_mask": Box(0, 512, (512, 512, 3))
-"agent": Box(-30, 30, (6,))
-"status": ActionStatus[ongoing, success, fail, ...]
-"camera_matrix": Box(-30, 30, (4, 4))
-"valid": bool
-"held_objects": List[Dict]
-"oppo_held_objects": List[Dict]
-"current_frames": int
-"visible_objects": List[Dict]
-"containment": Dict[str, Dict]
-"messages": Tuple[Text, Text]
-```
-
----
-
-### 🛠️ Gym APIs
-
-```python
-belongs_to_which_room((x, y, z)) -> str
-center_of_room(room_name) -> List[float]
-check_pos_in_room(x, z) -> bool
-```
-
----
-
-### 🔁 Gym Reset Output
-
-```python
-"goal_description": Dict[str, int]
-"room_type": List[str]
-```
-
----
-
-### 🎮 Gym Actions
-
-```python
-{"type": 0}  # Move forward 0.5m
-{"type": 1}  # Turn left 15 degrees
-{"type": 2}  # Turn right 15 degrees
-{"type": 3, "object": object_id, "arm": "left" | "right"}  # Grasp
-{"type": 4}  # Put into container
-{"type": 5, "arm": "left" | "right"}  # Drop
-{"type": 6, "message": "text"}  # Communicate
-```
 
