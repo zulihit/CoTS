@@ -62,9 +62,9 @@ CoTS enables agents to collaborate within a shared Monte Carlo Tree by generatin
 
 ## 📄 Paper & Resources
 
-- 📘 **Paper (CVPR 2025)**: [Coming Soon] 
-- 🌐 **Project Website**: [Coming Soon]  
-- 🖼️ **Poster**: [View Poster](https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202025/32902.png?t=1747986549.597608)
+- **Paper (CVPR 2025)**: [Coming Soon] 
+- **Project Website**: [Coming Soon]  
+- 🖼**Poster**: [View Poster](https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202025/32902.png?t=1747986549.597608)
 
 ---
 
@@ -104,6 +104,6 @@ If you find CoTS helpful in your research, please consider citing:
 ---
 
 ## 🤝 Acknowledgements
-Special thanks to the developers of CoELA and LangGraph—your open-source efforts made CoTS possible! 🙏🧠🌲
+Special thanks to the developers of CoELA and LangGraph—your open-source efforts made CoTS possible! 🙏
 
 ---
