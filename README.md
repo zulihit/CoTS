@@ -1,7 +1,7 @@
 <div align="center">
   <table>
     <tr>
-      <td><h1>CoTS: Collaborative Tree Search Enhancing Embodied Multi-Agent Collaboration</h3></td>
+      <td><h1>CVPR 2025 Collaborative Tree Search Enhancing Embodied Multi-Agent Collaboration</h3></td>
     </tr>
   </table>
 </div>
