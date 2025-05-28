@@ -1,0 +1,97 @@
+type,prompt
+Planner,"I am Alice. My teammate Bob and I want to transport as many target objects as possible to the bed with the help of containers within 3000 steps. Important: Remember Alice or Bob each can hold two things at a time,so you can't let a agent grasp more than 2 objects at a time in the plan. The 2 objects can be objects or containers. Alice or Bob can grasp containers and put objects into them to hold more objects at a time.
+Assume Alice is an expert in designing plan outlines. Given our shared goal, previous plan, dialogue history, latest progress, Bob's suggestion,  please help me generate/refine the global plan for Bob and me during task execution, guiding us to achieve the goal collaboratively as soon as possible. Note that a container can hold three objects and will be lost once transported to the bed. I can only place objects into a container I am holding after grasping it. All objects are denoted as  <name>(id), such as <table> (712). Actions take several steps to complete. Note that it may be costly to go to another room or transport to the bed, use these actions sparingly. It is unreasonable for Alice and Bob to explore the same room together.
+
+The generated action plan should strictly meet following requirements:
+1.You should make full use of the agent's transport capabilities (up to two objects or containers per agent) to transport as much as possible efficiently. The action plan should reasonably arrange the division of action between Alice and Bob in order to achieve the goal as soon as possible.Please be as detailed as possible in assigning actions to each agent, specific to a room or item.
+2.Please keep your reasoning process, but the final action plan should be brief, reliable, authentic, and consistent with the latest progress of Alice and Bob. Don’t make random and meaningless plans.
+3.There are only 5 allowed actions you can use to construct the action plan. 1) ‘go to’: move to a specified room. 2) ’explore’: explore a room for underlying target objects. 3) ‘ go grasp’: go to grasp a specified target object. 4) ‘put’: Place an object into a specified container. 5) ’transport’: Transport holding objects or containers to the bed and drop them on the bed.
+4.The action plan should be detailed to each Agent. The action plan only needs to consider three steps at most at current time. When there is not much known information or content to be planned, the action plan can have only one or two steps. The action plan must be structured strictly in the format: {Action Plan: Step 1: Alice xxx, Bob xxx; Step 2: Alice xxx, Bob xxx; Step 3: Alice xxx, Bob xxx}. Here, 'xxx' represents one or multiple allowed actions.
+5.In order to let Bob know about Alice's situation, you need to generate a short message to Bob. The message has to be concise, reliable, and helpful for assisting Bob and me to make an efficient and consistent action plan, and transport as many objects to the bed as possible. Don’t generate repetitive messages.
+6.To ensure the execution of the agent, your plan should be as detailed as possible, broken down into the 5 allowed actions provided. The actions they need to take now are the most important.
+7.Note that Alice and Bob act separately and can only exchange information. They cannot exchange items. Please do not assign the same action to two agents, it is wasteful.
+8.The bed is in the bedroom, we can take objects to the bedroom and will see the bed.
+
+Here are an example for Alice:
+
+{Goal: [Transport 2 oranges, 3 apples, 1 banana, 3 breads, 1 burger to the bed.]
+Reasoning: [According to Bob's suggestions and progress, the current plan is partially reasonable and needs minor adjustments. Bob found <orange> (5345043) and <banana> (6381322) in <Livingroom> (4000), but he can't take more things in his hand. He needs to transport them to the bed first. Alice currently is not far from <Livingroom> (4000), so Alice can go to <Livingroom> (4000) to get <orange> (5345043) and <banana> (6381322).]
+Action plan: [Step 1: Alice go to the  <Livingroom> (4000). Bob transport holding objects <bread> (547795) and <banana> (521494) to the bed and drop them on the bed.
+Step 2: Alice go grasp <orange> (5345043) and <banana> (6381322). Bob goes to the <Kitchen> (5000) to explore.
+Step 3: Alice transports holding objects to the bed. If any target objects or containers are found by Bob,  Bob go grasp objects.]
+Message: [Hi Bob, I have received your message and will adjust our action plan. You continue to transport the target items in your hand to the bed. I will transport the <orange> (5345043) and <banana> (6381322) in <Livingroom> (4000) you found. Do you have any new suggestions for the updated plan?]
+
+Following are provided information for Alice:
+Goal: $GOAL$
+Previous action plan: $PREVIOUS_PLAN$
+Dialogue history:  $DIALOGUE_HISTORY$
+Alice's Progress: $ALICE_PROGRESS$, it's need to consider Alice's latest action progress.
+
+Think step by step, and generate a new action plan, word format. "
+
+Check Message,"I am Bob. My teammate Alice and I want to transport as many target objects as possible to the bed with the help of containers within 3000 steps. Important: Alice or Bob can hold two things at a time, and they can be objects or containers. I can grasp containers and put objects into them to hold more objects at a time. Note that a container can contain three objects, and will be lost once transported to the bed. I can only put objects into the container I hold after grasping it. All objects are denoted as <name> (id), such as <table> (712). Actions take several steps to finish.
+Assume that you are an excellent leader for coordinating the task. Given our shared goal, action plan, dialogue history, progress, and our previous actions, please help me analyze whether the current action plan needs to be adjusted immediately.
+Before, Alice has generated an action plan based on our progress and discussion to coordinate Alice and Bob to complete the task efficiently. Now some steps have passed since the last discussion of the action plan, given our shared goal, action plan, dialogue history, progress, and our previous actions, please help me analyze whether the current action plan needs to be adjusted. Please note that the action progress can only reflect whether the action has been completed, but not whether the action is being taken. The process of the action will not be reflected in the progress.
+
+Your response needs to include your thought process and scoring. Scoring is mainly based on the following criteria:
+PA_Score: [the score between 0 and 5: 1, The current plan is completely unreasonable and needs to be revised 2, The current plan requires significant adjustments 3, The current plan needs improvement, its core structure is sound, though details are unclear 4, The current plan requires only minor adjustments 5, The current plan is fully reasonable and needs no changes. Only output the score.]
+
+Here is an example of generated massage for you:
+
+Reasoning: According to the latest progress, There is currently no plan to execute, so a plan needs to be generated.
+PA_Score: [1]
+
+Reasoning: According to the latest progress, Bob and Alice are both acting according to plan. Alice is in the process of taking action and Bob found new target items <ipod> (2189332) in the room <Office> (3000), which was not considered in the previous action plan. We should update our action plan to take them into account.
+PA_Score: [3]
+
+Following are provided information for you:
+
+Goal: $GOAL$
+Action plan: $ACTION_PLAN$
+Dialogue history:  $DIALOGUE_HISTORY$
+Previous action: $ACTION_HISTORY$
+Alice and Bob's progress desc: $PROGRESS$, it's important to consider Alice and Bob's latest action progress and the distance is a dimensionless relative measure.
+
+Think step by step, and generate the message, word format:"
+Bob Message,"I am Bob. My teammate Alice and I want to transport as many target objects as possible to the bed with the help of containers within 3000 steps.  Important: Remember Alice or Bob can hold two things at a time, and they can be objects or containers. Alice or Bob can grasp containers and put objects into them to hold more objects at a time.
+Because Alice may not understand Bob's current progress and information, and may not consider the plan comprehensively and perfectly, which wastes our action time. Given our shared goal, action plan, dialogue history, progress, and my previous actions, please help me analyze and score Alice's proposed action plan, point out the shortcomings of Alice's plan and reflect on it and finally generate a message to send to Alice, at the beginning of the message, I should first explain my findings. You should make full use of Alice and Bob to complete the task efficiently and not waste time. Important, Alice and Bob act separately and can only exchange information. They cannot exchange items. It may be costly to go to another room or transport to the bed, use these actions sparingly. Alice and Bob should not explore the same room at the same time, it is a waste of time. If the number of steps is close to 3000, it is most important to get the things in hand or the nearest things to the bed as soon as possible, rather than continue to look for.
+
+The content Bob generate mainly consists of two parts: reasoning and message sent to Alice. Please strictly follow the following format:
+Reasoning: [the reasoning process, analyze the unreasonableness of the current plan and consider how to make it more efficient]
+Dis_Score: [the score between 0 and 5: 1, No consideration of distance 2, Minimal consideration of distance, overlooking key factors 3, Distance is considered but not entirely accurate 4, Distance is sufficiently considered, with only minor oversights 5, Comprehensive and accurate consideration of distance, only output the score.]
+Task_Score: [the score between 0 and 5: 1, No consideration of work distribution between Alice and Bob 2, Minimal consideration of work distribution, leading to unreasonable allocation 3, Work distribution is considered but not entirely accurate 4, Work distribution is reasonable, with only minor oversights 5, Work distribution is highly effective, making full use of Alice and Bob's abilities, only output the score.]
+Message: [the message sent to Alice, you need to first tell Alice about your findings]
+
+Here are an example for your reference: :
+
+Reasoning: [In the current plan, Alice may not know our progress, so some of Bob's plans are vague, which needs to be improved. In addition, it is a waste of time for Alice and Bob to explore the same room together.]
+Dis_Score: [4]
+Task_Score: [2]
+Message: [Hi, Alice, I dont find any objects and we are in the same room,  it is not efficient for us to explore the same room together.   Your plan needs to be adjusted and describe my actions as detailed as possible..]
+
+The following is the information of Bob currently:
+
+Bob's Previous action: $ACTION_HISTORY$
+Bob's Progress: $BOB_PROGRESS$, it's need to consider Bob's latest action progress and the distance is a dimensionless relative measure.
+
+The following is the relevant information when Alice is planning her action plan, which can be used as a reference for Bob:
+User: {user_input}\n
+Alice's response: {candidate_content}
+
+Think step by step, and generate the content sent to Alice, word format:"
+Reasoner,"I am $AGENT_NAME$. My teammate $OPP_NAME$ and I want to transport as many target objects as possible to the bed with the help of containers within 3000 steps. I can hold two things at a time, and they can be objects or containers. I can grasp containers and put objects into them to hold more objects at a time. All objects and rooms are denoted as  <name>(id), such as <table> (712), <Living room> (3000) and <Living room> (1000) are not the same room.
+
+Assume that you are an expert decision maker. Given our shared goal, action plan, my progress, and previous actions, please help $AGENT_NAME$ choose adjustments and select my next available action.  Note that a container can contain three objects, and will be lost once transported to the bed. I can only put objects into the container I hold after grasping it. Actions take several steps to finish. It may be costly to go to another room or transport to the bed, use these actions sparingly.
+Because I need to complete the task step by step, you only need to help me to choose the next step that needs to be taken. Your response must be one of the Available actions.
+The action plan has the highest priority, unless there is no action available to choose from. Previous action of Alice and Bob is reference, please be careful not to choose the same action for Alice and Bob, it is wasteful.
+
+If the number of steps is close to 3000, it is most important to get the things in hand or the nearest things to the bed as soon as possible, rather than continue to look for.
+
+Goal: $GOAL$
+Action plan: $ACTION_PLAN$
+Available actions: $AVAILABLE_ACTIONS$
+$AGENT_NAME$ previous action: $ACTION_HISTORY1$
+$OPPO_NAME$ previous action: $ACTION_HISTORY2$
+Progress: $PROGRESS$
+
+Think step by step, and choose the next step of $AGENT_NAME$, word format:"
