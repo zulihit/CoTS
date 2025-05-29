@@ -70,7 +70,9 @@ CoTS enables agents to collaborate within a shared Monte Carlo Tree by generatin
 
 ## Installation
 
-For detailed instructions on the installation of the two embodied multi-agent environments `Communicative Watch-And-Help` and `ThreeDWorld Multi-Agent Transport`, please refer to the Setup sections in [`tdw_mat/README.md`](tdw_mat/README.md) and [`cwah/README.md`](cwah/README.md) respectively.
+For detailed instructions on the installation of the two embodied multi-agent environments `Communicative Watch-And-Help` and `ThreeDWorld Multi-Agent Transport`, please refer to the Setup sections in [`tdw_mat/README.md`](tdw_mat/README.md) and [`cwah/README.md`](cwah/README.md) respectively. 
+
+The implementation of CWAH is currently being organized and will be released soon.
 
 ---
 
@@ -79,7 +81,7 @@ For detailed instructions on the installation of the two embodied multi-agent en
 We provide ready-to-use scripts for running CoTS in the following multi-agent embodied environments:
 
 - 🏗️ **TDW-MAT** (`ThreeDWorld Multi-Agent Transport`) — [`tdw_mat/scripts`](tdw_mat/scripts)  
-- 🤝 **CWAH** (`Communicative Watch-And-Help`) — [`cwah/scripts`](cwah/scripts)
+- 🤝 **CWAH** (`Communicative Watch-And-Help`) — [`cwah/scripts`](cwah/scripts) 
 
 ▶️ Example: Run CoTS in TDW-MAT using GPT-4
 
