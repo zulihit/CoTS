@@ -70,7 +70,7 @@ CoTS enables agents to collaborate within a shared Monte Carlo Tree by generatin
 
 ## Installation
 
-For detailed instructions on the installation of the two embodied multi-agent environments `Communicative Watch-And-Help` and `ThreeDWorld Multi-Agent Transport`, please refer to the Setup sections in [`cwah/README.md`](cwah/README.md)   and [`tdw_mat/README.md`](tdw_mat/README.md) respectively.
+For detailed instructions on the installation of the two embodied multi-agent environments `Communicative Watch-And-Help` and `ThreeDWorld Multi-Agent Transport`, please refer to the Setup sections in [`cwah/README.md`](cwah/README.md) and [`tdw_mat/README.md`](tdw_mat/README.md) respectively.
 
 ---
 
