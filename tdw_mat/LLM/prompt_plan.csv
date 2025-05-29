@@ -82,7 +82,6 @@ Reasoner,"I am $AGENT_NAME$. My teammate $OPP_NAME$ and I want to transport as m
 Assume that you are an expert decision maker. Given our shared goal, action plan, my progress, and previous actions, please help $AGENT_NAME$ choose adjustments and select my next available action.  Note that a container can contain three objects, and will be lost once transported to the bed. I can only put objects into the container I hold after grasping it. Actions take several steps to finish. It may be costly to go to another room or transport to the bed, use these actions sparingly.
 Because I need to complete the task step by step, you only need to help me to choose the next step that needs to be taken. Your response must be one of the Available actions.
 The action plan has the highest priority, unless there is no action available to choose from. Previous action of Alice and Bob is reference, please be careful not to choose the same action for Alice and Bob, it is wasteful.
-
 If the number of steps is close to 3000, it is most important to get the things in hand or the nearest things to the bed as soon as possible, rather than continue to look for.
 
 Goal: $GOAL$
