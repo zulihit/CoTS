@@ -30,6 +30,7 @@
 conda create -n tdw_mat python=3.9
 conda activate tdw_mat
 pip install -e .
+pip install -U langgraph
 ```
 
 If running TDW on a remote server, refer to the [TDW setup guide](https://github.com/threedworld-mit/tdw/blob/master/Documentation/lessons/setup/install.md).
