@@ -1,7 +1,7 @@
 # Communicative Watch-And-Help
 
 The CoTS Playground — a friendly environment where intelligent agents collaborate, communicate, and conquer household tasks together!  
-This project builds upon the **Communicative Watch-And-Help (CWAH)** environment, which is from [CoELA](https://github.com/umass-embodied-agi/CoELA), and adapts it for testing our own **CoTS**.
+Based on the C-WAH environment initially adapted by [CoELA](https://github.com/UMass-Embodied-AGI/CoELA/tree/master/cwah), this project further extends and customizes it to support our proposed CoTS framework.
 
 ## Setup
 ### Step 1: Download VirtualHome Simulator and API

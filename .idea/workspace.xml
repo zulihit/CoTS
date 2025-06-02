@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f48694af-9075-4877-89c2-509dbfe6589b" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/cwah/LLM/CoTS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/scripts/symbolic_obs_hp.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/scripts/symbolic_obs_hp_hp.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/scripts/visual_obs_hp.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/scripts/visual_obs_hp_hp.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/testing_agents/test_symbolic_hp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/testing_agents/test_symbolic_hps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/testing_agents/test_vision_hp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cwah/testing_agents/test_vision_hps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tdw_mat/LLM/LLM.py" beforeDir="false" afterPath="$PROJECT_DIR$/tdw_mat/LLM/LLM.py" afterDir="false" />
-    </list>
+    <list default="true" id="f48694af-9075-4877-89c2-509dbfe6589b" name="Changes" comment="Changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,7 +177,7 @@
       <workItem from="1748501658832" duration="952000" />
       <workItem from="1748513208825" duration="140000" />
       <workItem from="1748568270033" duration="2145000" />
-      <workItem from="1748848216142" duration="6373000" />
+      <workItem from="1748848216142" duration="6713000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -398,7 +387,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748568407527</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Changes">
+      <option name="closed" value="true" />
+      <created>1748855630758</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1748855630758</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
