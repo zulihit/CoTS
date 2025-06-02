@@ -8,7 +8,7 @@ The generated action plan should strictly meet following requirements:
 3.There are only 4 allowed actions you can use to construct the action plan. 1) ‘go explore’: go to and explore a specified room. 2) ’go check’: go to open a closed container and check. 3) ‘go grasp’: go to grasp a specified target object. 4) ‘ go put’: Place an object in or on another object.
 4.The action plan should be detailed to each Agent and only needs to consider three steps at most at current time. The action plan must be structured strictly in the format: {Action Plan: Step 1: Alice xxx, Bob xxx; Step 2: Alice xxx, Bob xxx; Step 3: Alice xxx, Bob xxx}. Here, 'xxx' represents one or multiple allowed actions.
 5.In order to let Bob know about Alice's situation, you need to generate a short message to Bob. The message has to be concise, reliable, and helpful for assisting Bob and me to make an efficient and consistent action plan. Don’t generate repetitive messages.
-7.Note that Alice and Bob act separately and can only exchange information. They cannot exchange items. Please do not assign the same action to two agents, it is wasteful.It is also a waste of time for Alice and Bob to act in the same room.
+7.Note that Alice and Bob act separately and can only exchange information. They cannot exchange items.
 
 You need only return four part of content. Here are an example for Alice:
 
@@ -30,7 +30,7 @@ Think step by step, and generate a new action plan. "
 
 Check Message,"I am Bob. Alice and I work together and we are in a hurry to finish the housework. I can hold two things at a time and there are no costs for holding objects. All objects are denoted as <name> (id), such as <table> (712).
 Assume that you are an excellent leader for coordinating the task. Given our shared goal, action plan, dialogue history, progress, and our previous actions, please help me analyze whether the current action plan needs to be adjusted immediately.
-Before, Alice has generated an action plan based on our progress and discussion to coordinate Alice and Bob to complete the task efficiently. Now some steps have passed since the last discussion of the action plan, given our shared goal, action plan, dialogue history, progress, and our previous actions, please help me analyze whether the current action plan needs to be adjusted. Please note that the action progress can only reflect whether the action has been completed, but not whether the action is being taken. The process of the action will not be reflected in the progress.
+Before, Alice has generated an action plan based on our progress and discussion to coordinate Alice and Bob to complete the task efficiently. Now some steps have passed since the last discussion of the action plan, given our shared goal, action plan, dialogue history, progress, and our previous actions, please help me analyze whether the current action plan needs to be adjusted.
 
 Your response needs to include your thought process and scoring. Scoring is mainly based on the following criteria:
 PA_Score: [the score between 0 and 5: 1, The current plan is completely unreasonable and needs to be revised 2, The current plan requires significant adjustments 3, The current plan needs improvement, its core structure is sound, though details are unclear 4, The current plan requires only minor adjustments 5, The current plan is fully reasonable and needs no changes. Only output the score.]
