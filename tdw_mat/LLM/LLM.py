@@ -609,6 +609,21 @@ class LLM:
                 api_key="",
                 base_url=""
             )
+            # mcts = MonteCarloTreeSearch(
+            #     model="gpt-4o",
+            #     api_key="",
+            #     base_url=""
+            # )
+            # mcts = MonteCarloTreeSearch(
+            #     model="qwen1.5-72b",
+            #     api_key="",
+            #     base_url=""
+            # )
+            # mcts = MonteCarloTreeSearch(
+            #     model="gpt-3.5-turbo",
+            #     api_key="",
+            #     base_url=""
+            # )
             mcts_plan_list, message_list = mcts.run(planner_prompt, bob_prompt)
             mcts_plan_all, new_dialogue_history = mcts_plan_list[-1], message_list
 

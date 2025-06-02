@@ -1,0 +1,94 @@
+type,prompt
+Planner,"I am Alice. My teammate Bob and I work together and we are in a hurry to finish the housework. I can hold two things at a time and there are no costs for holding objects. All objects are denoted as <name> (id), such as <table> (712).
+Assume Alice is an expert in designing plan outlines. Given our shared goal, previous plan, dialogue history, latest progress, Bob's suggestion,  please help me generate/refine the global plan for Bob and me during task execution, guiding us to achieve the goal collaboratively as soon as possible.
+
+The generated action plan should strictly meet following requirements:
+1.The action plan should reasonably arrange the division of action between Alice and Bob in order to achieve the goal as soon as possible.Please be as detailed as possible in assigning actions to each agent, specific to a room or item.
+2.Please keep your reasoning process, but the final action plan should be brief, reliable, authentic, and consistent with the latest progress of Alice and Bob. Don’t make random and meaningless plans.
+3.There are only 4 allowed actions you can use to construct the action plan. 1) ‘go explore’: go to and explore a specified room. 2) ’go check’: go to open a closed container and check. 3) ‘go grasp’: go to grasp a specified target object. 4) ‘ go put’: Place an object in or on another object.
+4.The action plan should be detailed to each Agent and only needs to consider three steps at most at current time. The action plan must be structured strictly in the format: {Action Plan: Step 1: Alice xxx, Bob xxx; Step 2: Alice xxx, Bob xxx; Step 3: Alice xxx, Bob xxx}. Here, 'xxx' represents one or multiple allowed actions.
+5.In order to let Bob know about Alice's situation, you need to generate a short message to Bob. The message has to be concise, reliable, and helpful for assisting Bob and me to make an efficient and consistent action plan. Don’t generate repetitive messages.
+7.Note that Alice and Bob act separately and can only exchange information. They cannot exchange items. Please do not assign the same action to two agents, it is wasteful.It is also a waste of time for Alice and Bob to act in the same room.
+
+You need only return four part of content. Here are an example for Alice:
+
+Goal: [Find and put 1 pudding, 1 juice, 1 apple, 2 cupcakes onto the <coffeetable> (268).]
+Reasoning: [According to Bob's suggestions and progress, the current plan is partially reasonable and needs minor adjustments. xxxxx.] xxxx represents the inference content.
+Action plan: [Step 1: Alice explores the current room. Bob explores the current room.
+Step 2: If any target objects are found, Alice and Bob  go grasp objects.
+Step 3: Alice goes to one of the remaining rooms and explores it. Bob goes to one of the remaining rooms and explores it]}
+Message: [Hi Bob, I have received your message and will adjust our action plan. xxxxx.]
+
+
+Following are provided information for Alice:
+Goal: $GOAL$
+Previous action plan: $PREVIOUS_PLAN$
+Dialogue history:  $DIALOGUE_HISTORY$
+Alice's Progress: $ALICE_PROGRESS$, it's need to consider Alice's latest action progress.
+
+Think step by step, and generate a new action plan. "
+
+Check Message,"I am Bob. Alice and I work together and we are in a hurry to finish the housework. I can hold two things at a time and there are no costs for holding objects. All objects are denoted as <name> (id), such as <table> (712).
+Assume that you are an excellent leader for coordinating the task. Given our shared goal, action plan, dialogue history, progress, and our previous actions, please help me analyze whether the current action plan needs to be adjusted immediately.
+Before, Alice has generated an action plan based on our progress and discussion to coordinate Alice and Bob to complete the task efficiently. Now some steps have passed since the last discussion of the action plan, given our shared goal, action plan, dialogue history, progress, and our previous actions, please help me analyze whether the current action plan needs to be adjusted. Please note that the action progress can only reflect whether the action has been completed, but not whether the action is being taken. The process of the action will not be reflected in the progress.
+
+Your response needs to include your thought process and scoring. Scoring is mainly based on the following criteria:
+PA_Score: [the score between 0 and 5: 1, The current plan is completely unreasonable and needs to be revised 2, The current plan requires significant adjustments 3, The current plan needs improvement, its core structure is sound, though details are unclear 4, The current plan requires only minor adjustments 5, The current plan is fully reasonable and needs no changes. Only output the score.]
+
+Here is an example of generated massage for you:
+
+Reasoning: According to the latest progress, There is currently no plan to execute, so a plan needs to be generated.
+PA_Score: [1]
+
+Reasoning: According to the latest progress, Bob and Alice are both acting according to plan. Alice is in the process of taking action and Bob found new target items <ipod> (2189332) in the room <Office> (3000), which was not considered in the previous action plan. We should update our action plan to take them into account.
+PA_Score: [3]
+
+Following are provided information for you:
+
+Goal: $GOAL$
+Action plan: $ACTION_PLAN$
+Dialogue history:  $DIALOGUE_HISTORY$
+Previous action: $ACTION_HISTORY$
+Alice and Bob's progress desc: $PROGRESS$, it's important to consider Alice and Bob's latest action progress and the distance is a dimensionless relative measure.
+
+Think step by step, and generate the message:"
+Bob Message,"I am Bob. My teammate Alice and I work together and we are in a hurry to finish the housework. I can hold two things at a time and there are no costs for holding objects. All objects are denoted as <name> (id), such as <table> (712).
+
+Because Alice may not understand Bob's current progress and information, and may not consider the plan comprehensively and perfectly. Given our shared goal, action plan, dialogue history, progress, and my previous actions, please help me analyze and score Alice's proposed action plan, point out the shortcomings of Alice's plan and reflect on it and finally generate a message to send to Alice, at the beginning of the message, I should first explain my findings. You should make full use of Alice and Bob to complete the task efficiently and not waste time. Important, Alice and Bob act separately and can only exchange information. They cannot exchange items.
+
+The content Bob generate mainly consists of two parts: reasoning and message sent to Alice. Please strictly follow the following format:
+Reasoning: [the reasoning process, analyze the unreasonableness of the current plan and consider how to make it more efficient]
+Dis_Score: [the score between 0 and 5: 1, No consideration of distance 2, Minimal consideration of distance, overlooking key factors 3, Distance is considered but not entirely accurate 4, Distance is sufficiently considered, with only minor oversights 5, Comprehensive and accurate consideration of distance, only output the score.]
+Task_Score: [the score between 0 and 5: 1, No consideration of work distribution between Alice and Bob 2, Minimal consideration of work distribution, leading to unreasonable allocation 3, Work distribution is considered but not entirely accurate 4, Work distribution is reasonable, with only minor oversights 5, Work distribution is highly effective, making full use of Alice and Bob's abilities, only output the score.]
+Message: [the message sent to Alice, you need to first tell Alice about your findings]
+
+Here are an example for your reference: :
+
+Reasoning: [In the current plan, Alice may not know our progress, so some of Bob's plans are vague, which needs to be improved. In addition, it is a waste of time for Alice and Bob to explore the same room together.]
+Dis_Score: [4]
+Task_Score: [2]
+Message: [Hi, Alice, I dont find any objects and we are in the same room,  it is not efficient for us to explore the same room together.   Your plan needs to be adjusted and describe my actions as detailed as possible..]
+
+The following is the information of Bob currently:
+
+Bob's Previous action: $ACTION_HISTORY$
+Bob's Progress: $BOB_PROGRESS$, it's need to consider Bob's latest action progress and the distance is a dimensionless relative measure.
+
+The following is the relevant information when Alice is planning her action plan, which can be used as a reference for Bob:
+User: {user_input}\n
+Alice's response: {candidate_content}
+
+Think step by step, and generate the content sent to Alice:"
+Reasoner,"I am $AGENT_NAME$. My teammate $OPP_NAME$ and I work together and we are in a hurry to finish the housework. I can hold two things at a time and there are no costs for holding objects. All objects are denoted as <name> (id), such as <table> (712).
+Assume that you are an expert decision maker. Given our shared goal, action plan, my progress, and previous actions, please help $AGENT_NAME$ choose adjustments and select my next available action.
+Because I need to complete the task step by step, you only need to help me to choose the next step that needs to be taken. Your response must be one of the Available actions.
+The action plan has the highest priority, unless there is no action available to choose from. Previous action of Alice and Bob is reference, please be careful not to choose the same action for Alice and Bob, it is wasteful.
+
+Goal: $GOAL$
+Action plan: $ACTION_PLAN$
+Available actions: $AVAILABLE_ACTIONS$
+$AGENT_NAME$ previous action: $ACTION_HISTORY1$
+$OPPO_NAME$ previous action: $ACTION_HISTORY2$
+Progress: $PROGRESS$
+
+Think step by step, and choose the next step of $AGENT_NAME$:"
