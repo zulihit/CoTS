@@ -89,25 +89,15 @@ We provide ready-to-use scripts for running CoTS in the following multi-agent em
 ```
 ---
 
-## Notes on API Usage
+## 🔑 Notes on API Usage
 
-This project uses the API in two parts:
+This project uses the API in two parts. They occur in `tdw_mat/LLM/LLM.py` and `cwah/LLM/LLM.py`.
 
-They occur in `tdw_mat/LLM/LLM.py` and `cwah/LLM/LLM.py`. 
+The first part is initialized as `client = OpenAI(model="", api_key="", base_url="")`. This part handles general natural language processing for the agents — such as interpreting observations, generating responses, or selecting actions — outside of the cooperative tree search process.
 
-The first part is initialized as:
+The second part is initialized as `mcts = MonteCarloTreeSearch(model="", api_key="", base_url="")`. This separation exists because collaborative planning often requires more advanced reasoning capabilities, and thus may benefit from stronger language models. It also allows for more flexibility in specifying different models for different components.
 
-`client = OpenAI(model="", api_key="", base_url="")`
-
-This part handles general natural language processing for the agents — such as interpreting symbolic observations, generating responses, or selecting actions — outside of the cooperative tree search process.
-
-The second part is initialized as:
-
-`mcts = MonteCarloTreeSearch(model="", api_key="", base_url="")`
-
-This separation exists because collaborative planning often requires more advanced reasoning capabilities, and thus may benefit from stronger language models. It also allows for more flexibility in specifying different models for different components.
-
-**Important Note:** In our current paper and all reported experiments, we used the *same language model* (e.g., GPT-4) for both the general agent modules and the cooperative tree search. The separation of API calls is intended to support future exploration and modular improvements.
+💡 **Important Note:** In our current paper and all reported experiments, we used the *same language model* (e.g., GPT-4) for both the general agent modules and the cooperative tree search. The separation of API calls is intended to support future exploration and modular improvements.
 
 ---
 
