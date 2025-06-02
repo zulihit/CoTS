@@ -63,7 +63,7 @@ CoTS enables agents to collaborate within a shared Monte Carlo Tree by generatin
 ## 📄 Paper & Resources
 
 - **Paper (CVPR 2025)**: [Coming Soon]
-- 🖼**Poster**: [View Poster](https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202025/32902.png?t=1747986549.597608)
+- **Poster**: [View Poster](https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202025/32902.png?t=1747986549.597608)
 
 ---
 
