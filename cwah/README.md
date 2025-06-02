@@ -21,7 +21,7 @@ unzip executable.zip
 chmod +x executable/linux_exec.v2.3.0.x86_64
 ```
 
-Your folder structure should look like this:
+The folder structure should look like this:
 
 ```bash
 |--cwah/
