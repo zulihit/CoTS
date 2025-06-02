@@ -7,7 +7,7 @@ import re
 import os
 import pandas as pd
 import backoff
-from CoTS import MonteCarloTreeSearch
+from .CoTS import MonteCarloTreeSearch
 
 
 class LLM:
