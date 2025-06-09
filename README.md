@@ -62,7 +62,7 @@ CoTS enables agents to collaborate within a shared Monte Carlo Tree by generatin
 
 ## 📄 Paper & Resources
 
-- **Paper (CVPR 2025)**: [Coming Soon]
+- **Paper (CVPR 2025)**: [View Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zu_Collaborative_Tree_Search_for_Enhancing_Embodied_Multi-Agent_Collaboration_CVPR_2025_paper.pdf)
 - **Poster**: [View Poster](https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202025/32902.png?t=1747986549.597608)
 
 ---
