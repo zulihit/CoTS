@@ -104,10 +104,11 @@ The second part is initialized as `mcts = MonteCarloTreeSearch(model="", api_key
 If you find CoTS helpful in your research, please consider citing:
 
 ```bibtex
-@inproceedings{zu2025cots,
+@inproceedings{zu2025collaborative,
   title={Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration},
   author={Zu, Lizheng and Lin, Lin and Fu, Song and Zhao, Na and Zhou, Pan},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={29513--29522},
   year={2025}
 }
 ```
