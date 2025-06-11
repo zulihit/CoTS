@@ -5,8 +5,8 @@
 
 
 <p align="center">
-<a href="https://arxiv.org/abs/XXXX.XXXXX" alt="arXiv">
-    <img src="https://img.shields.io/badge/paper-Coming--soon-b31b1b.svg?style=flat" /></a>
+<a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Zu_Collaborative_Tree_Search_for_Enhancing_Embodied_Multi-Agent_Collaboration_CVPR_2025_paper.pdf" alt="arXiv">
+    <img src="https://img.shields.io/badge/paper-CVPR-b31b1b.svg?style=flat" /></a>
 <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-1.x%20%7C%202.x-673ab7.svg" alt="Tested PyTorch Versions"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-4caf50.svg" alt="License"></a>
 </p>
