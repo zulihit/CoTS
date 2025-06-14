@@ -365,7 +365,6 @@ class vision_LLM_agent:
         self.current_room = self.vision_pipeline.object_info[obs['current_room']]
 
         satisfied, unsatisfied = self.check_progress(symbolic_obs, goal)
-        # print(f"satisfied: {satisfied}")
         if len(satisfied) > 0:
             self.unsatisfied = unsatisfied
             self.satisfied = satisfied
