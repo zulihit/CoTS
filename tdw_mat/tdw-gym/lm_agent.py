@@ -378,6 +378,7 @@ class lm_agent:
         Check if the agent has reached the target position.
         If the task is 'transport', also check room consistency.
         """
+
         x, _, z = self.obs["agent"][:3]
         gx, _, gz = target_pos
         d = self.l2_distance((x, z), (gx, gz))
