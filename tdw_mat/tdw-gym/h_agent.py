@@ -8,6 +8,7 @@ import math
 import copy
 from PIL import Image
 
+
 CELL_SIZE = 0.125
 ANGLE = 15
 MAX_GOAL_COUNT = 15

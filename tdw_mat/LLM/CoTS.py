@@ -33,6 +33,7 @@ class Node:
             reflection: Reflection,       # Reflection associated with this node
             parent: Optional[Node] = None,  # Reference to the parent node (None for root)
     ):
+
         self.messages = messages
         self.parent = parent
         self.children = []
