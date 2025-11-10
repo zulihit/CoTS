@@ -28,12 +28,12 @@ _Lizheng Zu, Lin Lin, Song Fu, Na Zhao, Pan Zhou_
 ---
 ## 🧠 Framework of CoTS 
 
-> **🧭 Plan → 🪞 Reflect & Score → 🌲 Search → ✅ Act**
+> **🧭 Plan → 🤔 Reflect & Score → 🌲 Search → ✅ Act**
 
 CoTS builds upon the architecture of [CoELA](https://umass-embodied-agi.github.io/CoELA/), enables multiple LLM-based embodied agents to collaborate effectively by integrating large language models into a dynamic tree-based decision-making process. The four key stages are:
 
 - 🧭 **Plan**: Agents collaboratively propose high-level strategies using LLM-generated dialogues.
-- 🪞 **Reflect & Score**: Plans are reflected upon using custom LLM-based reward signals.
+- 🤔 **Reflect & Score**: Plans are reflected upon using custom LLM-based reward signals.
 - 🌲 **Search**: A Monte Carlo Tree is built with branching proposals, allowing agents to evaluate multiple paths and correct one another.
 - ✅ **Act**: Once a coherent plan is validated, agents execute actions in coordination. A plan evaluation module ensures consistency and adapts if plans become unsuitable.
 
@@ -116,6 +116,6 @@ If you find CoTS helpful in your research, please consider citing:
 ---
 
 ## 🤝 Acknowledgements
-Special thanks to the developers of CoELA and LangGraph—your open-source efforts made CoTS possible! 🙏
+Special thanks to the developers of CoELA and LangGraph! 🙏
 
 ---
